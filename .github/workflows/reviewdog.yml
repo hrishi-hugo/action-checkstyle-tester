@@ -2,13 +2,12 @@ name: reviewdog
 on: [pull_request]
 jobs:
   checkstyle:
-    name: runner / checkstyle
+    name: my-reviewer
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run check style
-        uses: nikitasavinov/checkstyle-action@master
+      - uses: actions/checkout@v2
+      - uses: dbelyaev/action-checkstyle@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: 'github-pr-check'
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          checkstyle_config: "custom_checkstyle.xml"
