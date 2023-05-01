@@ -13,5 +13,7 @@ jobs:
       - uses: dbelyaev/action-checkstyle@master
         with:
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-check
+          reporter: github-pr-review
           checkstyle_config: "custom_checkstyle.xml"
+          fail_on_error: true
+          level: error
