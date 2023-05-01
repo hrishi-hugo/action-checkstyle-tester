@@ -30,9 +30,9 @@ public class Application {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-                System.out.println("Let's inspect the beans provided by Spring Boot:");
+            System.out.println("Let's inspect the beans provided by Spring Boot:");
 
-                    var LongString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porta lorem";
+            var LongString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porta lorem";
 
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
